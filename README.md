@@ -20,7 +20,7 @@ If you want dont want fixed height goto main.css line:54
     overflow: hidden;
 }
 
-<strong>remove the <pre>height</pre> so you will get actuall height of the image, but put same height images so it wont disort</strong>
+<strong>remove the <i>height</i> so you will get actuall height of the image, but put same height images so it wont disort</strong>
 ______________________________________________________________________________________
 <h3>Credits</h3>
 animated using :  https://github.com/animate-css/animate.css
