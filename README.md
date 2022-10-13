@@ -3,10 +3,11 @@ Slider with thumbnail with play pause button
 
 for deisgn animation you can update in script.js file
 
-var startimage = 1;    //choose the image for startup
-var sliderduration = 2000; //choose the time duration
-var animationEffects = "fadeIn"; ////choose the animation 
+var startimage = 1;    //choose the image for startup <br>
+var sliderduration = 2000; //choose the time duration <br>
+var animationEffects = "fadeIn"; ////choose the animation from https://animate.style/ (https://github.com/animate-css/animate.css) <br>
 
+animated using :  https://github.com/animate-css/animate.css
 
 <br>
 images are taken from:<br>
