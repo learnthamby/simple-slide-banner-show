@@ -1,8 +1,8 @@
 # simple-slide(banner) show
 Slider with thumbnail with play pause button
 
-
-images are taken from:
+<br>
+images are taken from:<br>
 Photo by Luis del Río: https://www.pexels.com/photo/person-walking-between-green-forest-trees-15286/<br>
 Photo by stein egil liland: https://www.pexels.com/photo/scenic-view-of-snow-capped-mountains-during-night-3408744/<br>
 Photo by Jaime Reimer: https://www.pexels.com/photo/beautiful-view-of-moraine-lake-2662116/<br>
