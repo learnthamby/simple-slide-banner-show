@@ -1,6 +1,13 @@
 # simple-slide(banner) show
 Slider with thumbnail with play pause button
 
+for deisgn animation you can update in script.js file
+
+var startimage = 1;    //choose the image for startup
+var sliderduration = 2000; //choose the time duration
+var animationEffects = "fadeIn"; ////choose the animation 
+
+
 <br>
 images are taken from:<br>
 Photo by Luis del Río: https://www.pexels.com/photo/person-walking-between-green-forest-trees-15286/<br>
