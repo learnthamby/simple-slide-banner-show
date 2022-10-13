@@ -1,12 +1,28 @@
 # simple-slide(banner) show
 Slider with thumbnail with play pause button
 
-for deisgn animation you can update in script.js file
+
+______________________________________________________________________________________
+for animation you can update following in script.js file
 
 var startimage = 1;    //choose the image for startup <br>
 var sliderduration = 2000; //choose the time duration <br>
 var animationEffects = "fadeIn"; ////choose the animation from https://animate.style/ (https://github.com/animate-css/animate.css) <br>
 
+
+______________________________________________________________________________________
+If you want dont want fixed height goto main.css line:54
+
+.sliderHolder {
+    float: left;
+    width: 100%;
+    <b>height: 416px;</b>
+    overflow: hidden;
+}
+
+<strong>remove the <pre>height</pre> so you will get actuall height of the image, but put same height images so it wont disort</strong>
+______________________________________________________________________________________
+<h3>Credits</h3>
 animated using :  https://github.com/animate-css/animate.css
 
 <br>
