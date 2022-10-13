@@ -4,24 +4,223 @@
   <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title></title>
+  <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
   <link href="main.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="crossorigin="anonymous"></script>
-  <script type="text/javascript" src="script.js"></script>
+
+  
+  
+  <style>
+  .container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  font-style: normal;
+  list-style: none;
+  padding: 0;
+}
+
+.sliderHolder > ul > li {
+  width: 100%;
+  float: left;
+}
+
+.sliderHolder {
+  float: left;
+  width: 100%;
+  height: 416px;
+  overflow: hidden;
+}
+
+.slider_navigator {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+
+/* .container{ max-width:100%; } */
+
+.sliderHolder > ul > li {
+  /* position: absolute; */
+  opacity: 0;
+}
+
+.slidethumb > ul > li {
+  display: table-cell;
+  height: 96px;
+  /* padding: 10px 6px; */
+  border: 2px solid transparent;
+  padding: 0;
+}
+
+.slidethumb > ul > li > img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  margin: auto;
+  display: block;
+  padding: 4px;
+}
+
+.slidethumb > ul > li:last-child > img {
+  width: 100%;
+}
+
+.slidethumb > ul {
+  display: table;
+  width: 100%;
+  position: relative;
+  top: 30px;
+}
+
+.sliderHolder > ul > li > img {
+  width: 100%;
+}
+
+.slider_navigator > a {
+  position: absolute;
+  transform: translateY(-320%);
+  height: 80px;
+  width: 80px;
+  font-size: 56px;
+  background: rgba(255, 255, 255, 0.11);
+  display: inline-block;
+  text-align: center;
+  color: #2d2d2d;
+  text-shadow: -2px 0px 0px #868686;
+  opacity: 0.4;
+  line-height: 83px;
+}
+
+a.smh_rightarrw.float-right {
+  right: 0;
+  text-shadow: 2px 0px 0px #868686;
+}
+
+.slidethumb > ul > li.active,
+.slidethumb > ul > li.active:hover {
+  border: 2px solid red;
+}
+
+.sliderMainHolder:hover .slider_navigator > a {
+  opacity: 1;
+}
+
+.slidethumb > ul > li:hover {
+  border: 2px solid #868686;
+}
+
+@media (max-width: 767px) {
+  .sliderHolder {
+    height: initial;
+  }
+  .slidethumb > ul > li {
+    height: 40px;
+  }
+  .slider_navigator > a {
+    transform: translateY(-180%);
+    width: initial;
+    height: initial;
+    font-size: 25px;
+    padding: 9px;
+    opacity: 1;
+    line-height: normal;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .slider_navigator > a {
+    transform: translateY(-300%);
+    line-height: normal;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .slider_navigator > a {
+    transform: translateY(-250%);
+  }
+  .sliderHolder {
+    height: initial;
+  }
+  .slidethumb > ul > li {
+    height: 66px;
+  }
+}
+
+.sliderHolder > ul {
+  margin: 0;
+}
+.sliderplayer {
+  position: absolute;
+  bottom: 74px;
+  right: 0;
+}
+
+.sliderMainHolder {
+  position: relative;
+}
+
+  </style>
 </head>
 <body>
   <div class="container">
     <div class="sliderMainHolder">
       <div class="sliderHolder">
         <ul>
-          <li class="listdesign"> <img src="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjF8fG5hdHVyZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" id="animImage" /> </li>
-          <li class="listdesign"> <img src="https://images.unsplash.com/photo-1588392382834-a891154bca4d?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80 " id="animImage" /> </li>
-          <li class="listdesign"> <img src="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjF8fG5hdHVyZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" id="animImage" /> </li>
-          <li class="listdesign"> <img src="https://images.unsplash.com/photo-1588392382834-a891154bca4d?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80" id="animImage" /> </li>
-          <li class="listdesign"> <img src="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjF8fG5hdHVyZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" id="animImage" /> </li>
-                    <li class="listdesign"> <img src="https://images.unsplash.com/photo-1588392382834-a891154bca4d?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80" id="animImage" /> </li>
-                      <li class="listdesign"> <img src="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjF8fG5hdHVyZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" id="animImage" /> </li>
+          <li class="listdesign"> <img src="img/pexels-alesia-kozik-6004828.jpg" id="animImage" /> </li>
+          <li class="listdesign"> <img src="img/pexels-jaime-reimer-2662116.jpg" id="animImage" /> </li>
+          <li class="listdesign"> <img src="img/pexels-kammeran-gonzalezkeola-7925859.jpg" id="animImage" /> </li>
+          <li class="listdesign"> <img src="img/pexels-luis-del-río-15286.jpg" id="animImage" /> </li>
+          <li class="listdesign"> <img src="img/pexels-stein-egil-liland-3408744.jpg" id="animImage" /> </li>
+		  <li class="listdesign"> <img src="img/pexels-alesia-kozik-6004828.jpg" id="animImage" /> </li>
+          <li class="listdesign"> <img src="img/pexels-jaime-reimer-2662116.jpg" id="animImage" /> </li>
         </ul>
       </div>
       <div class="slider_navigator">
@@ -38,9 +237,14 @@
   </div>
   
     <p>&nbsp;</p>  <p>&nbsp;</p>  <p>&nbsp;</p>  <p>&nbsp;</p>
-  <div>img source : https://unsplash.com/@ignitedit
-https://unsplash.com/@editholic7
-
+  <div>Photo by Luis del Río: https://www.pexels.com/photo/person-walking-between-green-forest-trees-15286/
+Photo by stein egil liland: https://www.pexels.com/photo/scenic-view-of-snow-capped-mountains-during-night-3408744/
+Photo by Jaime Reimer: https://www.pexels.com/photo/beautiful-view-of-moraine-lake-2662116/
+Photo by Kammeran Gonzalez-Keola: https://www.pexels.com/photo/man-riding-surfboard-in-wavy-ocean-7925859/
+Photo by Alesia  Kozik: https://www.pexels.com/photo/river-in-the-middle-of-forest-6004828/
 </div>
+  <!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </body>
 </html>
